@@ -4,7 +4,7 @@ This is an API consumption architecture pattern for frontend applications. <br>
 A demo for its use in a Vue app is also provided <a href="https://codesandbox.io/s/github/timothyokooboh/frontend_api_consumption_architecture_react" target="_blank">here</a>
 
 <br><br>
-Here is the same architecture pattern demonstrated with React.js
+<a href="https://github.com/timothyokooboh/frontend_rest_api_consumption_architecture_react">Here</a> is the same architecture pattern demonstrated with React.js
 
 ## Dependencies
 1. Typescript
