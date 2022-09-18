@@ -28,9 +28,9 @@ export default APIEndpoint;
 across the entire application. <br>
 This single composable function returns three states to the consumer component <br>
 ```
-i. loading
-ii. response
-iii. error
+a. loading
+b. response
+c. error
 ```
 
 ## Example Usage
