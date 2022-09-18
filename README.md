@@ -24,7 +24,7 @@ which is a union type described below <br>
 
 export default APIEndpoint;
 ```
-4. A `useResource` hook that handles every API call thereby providing <br> a DRY approach to API consumption
+4. A `useResource` composable that handles every API call thereby providing <br> a DRY approach to API consumption
 across the entire application.
 
 ## Example Usage
