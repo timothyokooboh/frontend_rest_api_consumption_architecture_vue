@@ -1,6 +1,6 @@
 # frontend_api_consumption_architecture_vue
 
-This is an API consumption architecture pattern for frontend applications. <br>
+This is a REST API consumption architecture pattern for frontend applications. <br>
 A demo for its use in a Vue app is also provided <a href="https://codesandbox.io/p/github/timothyokooboh/frontend_rest_api_consumption_architecture_vue/draft/beautiful-wing?file=%2FREADME.md" target="_blank">here</a>
 
 <a href="https://github.com/timothyokooboh/frontend_rest_api_consumption_architecture_react">Here</a> is the same architecture pattern demonstrated with React.js
