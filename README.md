@@ -25,7 +25,11 @@ which is a union type described below <br>
 export default APIEndpoint;
 ```
 3. A `useResource` composable that handles every API call thereby providing <br> a DRY approach to API consumption
-across the entire application.
+across the entire application. <br>
+This single composable function returns three states to the consumer component <br>
+i. loading
+ii. response
+iii. error
 
 ## Example Usage
 ```
