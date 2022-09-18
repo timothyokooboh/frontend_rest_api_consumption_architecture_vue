@@ -1,16 +1,45 @@
-# Vue 3 + TypeScript + Vite
+# frontend_api_consumption_architecture_vue
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is an API consumption architecture pattern for frontend applications. <br>
+A demo for its use in a Vue app is also provided <a href="https://codesandbox.io/s/github/timothyokooboh/frontend_api_consumption_architecture_react" target="_blank">here</a>
 
-## Recommended IDE Setup
+<br><br>
+Here is the same architecture pattern demonstrated with React.js
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Dependencies
+1. Typescript
+2. Axios
+3. Vue
 
-## Type Support For `.vue` Imports in TS
+## Key highlights
+1. Typed API endpoints.
+2. Endpoints documented as constants and then leverage the ` APIEndpoint` type <br>
+which is a union type <br>
+```
+  type APIEndpoint =
+  | GETAPIEndpoint
+  | POSTAPIEndpoint
+  | PUTAPIEndpoint
+  | PATCHAPIEndpoint
+  | DELETEAPIEndpoint;
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+export default APIEndpoint;
+```
+4. A `useResource` hook that handles every API call thereby providing <br> a DRY approach to API consumption
+across the entire application.
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+## Example Usage
+```
+  import useResource from "./composables/useResource";
+  import { LIST_COUNTRIES } from "./models/CountriesModel";
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+  const { loading, response, error } = useResource(LIST_COUNTRIES);
+```
+Where `LIST_COUNTRIES` is a constant that documents the endpoint <br>
+for listing countries from an API
+```
+ export const LIST_COUNTRIES: GETAPIEndpoint = {
+  url: "/v3.1/all",
+  method: "GET"
+};
+```
